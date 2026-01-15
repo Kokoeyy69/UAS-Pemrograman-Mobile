@@ -65,6 +65,54 @@ Aplikasi ini dibangun untuk menjawab tantangan **Ujian Akhir Semester (UAS)** de
 
 <br>
 
+## 📂 Project Architecture
+
+Struktur direktori project ini disusun menggunakan pendekatan **Feature-First Architecture** untuk memastikan skalabilitas dan kemudahan perawatan kode (*maintainability*).
+
+```bash
+UAS-Pemrograman-Mobile/
+│
+├── 📱 Platforms/              # Native Configuration
+│   ├── 🤖 android/            # Android Gradle & Manifest
+│   ├── 🍎 ios/                # iOS Runner & Info.plist
+│   ├── 🐧 linux/              # Linux (Pop!_OS) CMake
+│   ├── 🍎 macos/              # macOS Debug/Release Config
+│   ├── 🪟 windows/            # Windows Runner
+│   └── 🌐 web/                # Web Icons & Manifest
+│
+├── 🎨 assets/                 # Static Resources
+│   ├── 🌍 translations/       # Localization (id, en, ja, ar, etc.)
+│   ├── 🖼️ images/             # SVGs, Placeholders, Logos
+│   └── 📱 icon/               # App Launcher Icons
+│
+├── 🛠️ bin/                    # Utility Scripts
+│   └── ⚙️ generate_language.dart
+│
+├── 🧠 lib/                    # MAIN SOURCE CODE (Dart)
+│   ├── 🏁 main.dart           # Application Entry Point
+│   ├── 🧱 core/               # Shared Utilities (App Export)
+│   ├── 🛣️ routes/             # App Navigation Routes
+│   ├── 🎨 theme/              # App Theme & Styles
+│   │
+│   ├── 🧩 widgets/            # Global Reusable Components
+│   │   ├── 🟦 custom_app_bar.dart
+│   │   ├── ⬛ custom_bottom_bar.dart
+│   │   └── ...
+│   │
+│   └── 📱 presentation/       # Feature Modules (Screens)
+│       ├── ⚡ splash_screen/        # Logic: Location & Timer
+│       ├── 🏠 wallet_dashboard/     # Logic: Home, Charts, Cards
+│       ├── 📜 transaction_history/  # Logic: ListView & Filters
+│       ├── 💳 card_details_screen/  # Logic: Card Security & Info
+│       ├── ➕ add_card_screen/      # Logic: Add New Card Form
+│       └── 💸 transfer_money_screen/# Logic: Transfer Features
+│
+├── ⚙️ pubspec.yaml            # Dependencies & Assets Management
+└── 📄 analysis_options.yaml   # Linter Rules & Best Practices
+```
+
+<br>
+
 ## 📱 Application Preview
 
 <div align="center">
